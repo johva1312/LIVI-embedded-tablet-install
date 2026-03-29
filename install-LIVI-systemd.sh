@@ -14,6 +14,10 @@ GRUB_FILE="/etc/default/grub"
 KERNEL_PRINTK_FILE="/etc/sysctl.d/20-quiet-printk.conf"
 GRUBD_FILE_10="/etc/grub.d/10_linux"
 
+# usermod not found in su 
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+export PATH
+
 # Check if carplay user exists, exit if it doesn't.
 echo "Ensuring carplay user exists..."
 if ! id "$CARPLAY_USER" >/dev/null 2>&1; then
